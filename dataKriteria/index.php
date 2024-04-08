@@ -23,7 +23,7 @@ include('../components/koneksi.php');
                         <h2>Data Kriteria</h2>
                     </div>
                     <div class="container-tombol">
-                        <a class="tombol-tambah btn" href="tambah.php" role="button">tambah data</a>
+                        <a class="tombol-tambah btn" href="tambah.php" role="button">Tambah data</a>
                     </div>
                     <table class="table table-striped table-hover" id="dataTables">
                         <thead>
