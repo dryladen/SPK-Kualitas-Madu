@@ -22,9 +22,11 @@ include('../components/koneksi.php');
                     <div class="judul">
                         <h2>Data Alternatif</h2>
                     </div>
-                    <div class="container-tombol">
-                        <a class="tombol-tambah btn" href="tambah.php" role="button">Tambah data</a>
-                    </div>
+                    <?php if ($_SESSION['role'] != 'user') : ?>
+                        <div class="container-tombol">
+                            <a class="tombol-tambah btn" href="tambah.php" role="button">Tambah data</a>
+                        </div>
+                    <?php endif; ?>
                     <table class="table table-striped table-hover" id="dataTables">
                         <thead>
                             <tr>
@@ -38,7 +40,9 @@ include('../components/koneksi.php');
                                     echo "<th class='text-center'>{$kriteria['nama']}</th>";
                                 }
                                 ?>
-                                <th>Aksi</th>
+                                <?php if ($_SESSION['role'] != 'user') { ?>
+                                    <th>Aksi</th>
+                                <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,12 +69,14 @@ include('../components/koneksi.php');
                                         }
                                     }
                                     ?>
-                                    <td class="text-center">
-                                        <div class="text-center">
-                                            <a class="btn tombol-edit" href="edit.php?id=<?= $row['id'] ?>"><i class="fas fa-pencil"></i></a>
-                                            <a class="btn tombol-hapus" href="hapus.php?id=<?= $row['id'] ?>"><i class="fas fa-trash"></i></a>
-                                        </div>
-                                    </td>
+                                    <?php if ($_SESSION['role'] != 'user') { ?>
+                                        <td class="text-center">
+                                            <div class="text-center">
+                                                <a class="btn tombol-edit" href="edit.php?id=<?= $row['id'] ?>"><i class="fas fa-pencil"></i></a>
+                                                <a class="btn tombol-hapus" href="hapus.php?id=<?= $row['id'] ?>"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    <?php } ?>
                                 </tr>
                             <?php } ?>
                         </tbody>

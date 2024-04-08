@@ -3,7 +3,7 @@
 <?php
 include('../components/koneksi.php');
 session_start();
-$sql = mysqli_query($koneksi, "SELECT * FROM admin WHERE id_admin = '$_SESSION[id]'") or die(mysqli_error($koneksi));
+$sql = mysqli_query($koneksi, "SELECT * FROM users WHERE id_admin = '$_SESSION[id]'") or die(mysqli_error($koneksi));
 $data = mysqli_fetch_array($sql);
 $id = $_SESSION['id'];
 
@@ -24,7 +24,7 @@ if (isset($_POST["edit"])) {
     if ($pass == $password_confirmation) {
         $password = md5($pass);
 
-        $query = "UPDATE admin SET 
+        $query = "UPDATE users SET 
         nama_admin = '$nama',
         password = '$password'
         WHERE id_admin='$id'";

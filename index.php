@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $username;
         $_SESSION['role'] = $dataUser['role'];
         $_SESSION['success'] = "You have logged in!";
-        header('Location: dataKriteria/index.php');
+        header('Location: pages/beranda.php');
     }
 }
 ?>

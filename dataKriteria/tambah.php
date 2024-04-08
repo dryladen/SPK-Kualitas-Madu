@@ -53,7 +53,7 @@ if (isset($_POST["tambah"])) {
                 <b>Bobot (Persen)</b>
               </div>
               <div class="">
-                <input style="height: 4rem;" class="form-control" name="bobot" type="number" min="1" max="100" required placeholder="1 - 100 (Persen)">
+                <input style="height: 4rem;" class="form-control" name="bobot" type="number" step="0.01" required placeholder="1 - 100 (Persen)">
               </div>
               <div class="" style="margin-top: 10px;">
                 <b>Jenis Kriteria</b>
