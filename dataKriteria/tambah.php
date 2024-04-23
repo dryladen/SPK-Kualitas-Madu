@@ -67,7 +67,6 @@ if (isset($_POST["tambah"])) {
               <center><button name="tambah" type="submit" class="btn tombol-tambah2" style="margin-bottom:15px;">Tambah</button></center>
             </form>
           </div>
-
           <div class="container-tombol2">
             <a class="tombol-kembali btn" href="index.php" role="button">kembali</a>
           </div>

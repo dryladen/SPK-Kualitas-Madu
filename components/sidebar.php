@@ -1,8 +1,8 @@
 <?php
-// session_start();
 if (!$_SESSION['role']) {
   header('Location: ../index.php');
 }
+
 ?>
 <div class="sidebar">
   <h2 style="text-transform: capitalize;"><?= $_SESSION['role'] ?></h2>
@@ -19,6 +19,6 @@ if (!$_SESSION['role']) {
     <?php if ($_SESSION['role'] == "admin") { ?>
       <li><a href="../dataPengguna/index.php"><i class="fas fa-user"></i>Data Pengguna</a></li>
     <?php } ?>
-    <li><a href="../index.php?logout='1'"><i class="fas fa-sign-out"></i>Keluar</a></li>
+    <li><a href="../pages/logout.php"><i class="fas fa-sign-out"></i>Keluar</a></li>
   </ul>
 </div>

@@ -5,15 +5,15 @@
 include('components/koneksi.php');
 $_SESSION['success'] = "";
 $username = "";
-
 if (isset($_POST['submit'])) {
     session_start();
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
-    $pass = mysqli_real_escape_string($koneksi, $_POST['password']);
-    $password = md5($pass);
+    $password = md5(mysqli_real_escape_string($koneksi, $_POST['password']));
+
     $queryUser = mysqli_query($koneksi, "SELECT * FROM users WHERE username ='$username' AND password ='$password'");
     $cekUser = mysqli_num_rows($queryUser);
     $dataUser = mysqli_fetch_array($queryUser);
+
     if ($cekUser == 0) {
         echo "<script>alert('Username atau Password Anda salah. Silahkan coba lagi!')</script>";
     } else if ($cekUser > 0) {

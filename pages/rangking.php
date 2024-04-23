@@ -8,7 +8,7 @@ include('../pages/spkMoora.php');
 
 <head>
   <?php include('../components/head.php') ?>
-  <title>SPK Kejaksaan Negeri Samarinda</title>
+  <title>SPK Pemilihan Kualitas Madu</title>
 </head>
 
 <body>

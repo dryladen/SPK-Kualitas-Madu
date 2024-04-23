@@ -8,7 +8,7 @@ include('../pages/spkMoora.php');
 
 <head>
     <?php include('../components/head.php') ?>
-    <title>SPK Kejaksaan Negeri Samarinda</title>
+    <title>SPK Pemilihan Kualitas Madu</title>
 </head>
 
 <body>
@@ -39,7 +39,6 @@ include('../pages/spkMoora.php');
                                 ?>
                             </tr>
                         </thead>
-
                         <tbody>
                             <?php
                             $query = mysqli_query($koneksi, "SELECT * FROM alternatif ORDER BY kode") or die(mysqli_error($koneksi));

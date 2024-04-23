@@ -6,20 +6,16 @@ session_start();
 include('../components/koneksi.php');
 
 $id = $_GET['id'];
-
 $menu = mysqli_query($koneksi, "SELECT * FROM kriteria WHERE id='$id'") or die(mysqli_error($koneksi));
 $men = mysqli_fetch_assoc($menu);
 
 if (isset($_POST['edit'])) {
-
   $query = "UPDATE kriteria SET 
     kode='$_POST[kode]',
     nama='$_POST[nama]',
     bobot='$_POST[bobot]',
     jenis='$_POST[jenis]' WHERE id='$id'";
-
   $query_run = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
-
   if ($query_run) {
     echo "
 		<script>
@@ -50,7 +46,6 @@ if (isset($_POST['edit'])) {
       <div class="header">
         <h4>SPK Pemilihan Kualitas Madu</h4>
       </div>
-
       <div class="box">
         <div class="container-table">
           <div class="judul">
@@ -80,8 +75,8 @@ if (isset($_POST['edit'])) {
               </div>
               <div class="">
                 <select name="jenis" id="jenis" style="height: 4rem; padding: 0 20px;" class="">
-                  <option style="height: 4rem;" value="benefit" <?php if($men['jenis'] == 'benefit') echo 'selected'; ?>>Benefit</option>
-                  <option style="height: 4rem;" value="cost" <?php if($men['jenis'] == 'cost') echo 'selected'; ?>>Cost</option>
+                  <option style="height: 4rem;" value="benefit" <?php if ($men['jenis'] == 'benefit') echo 'selected'; ?>>Benefit</option>
+                  <option style="height: 4rem;" value="cost" <?php if ($men['jenis'] == 'cost') echo 'selected'; ?>>Cost</option>
                 </select>
               </div>
               <center><button name="edit" type="submit" class="btn tombol-tambah2" style="margin-bottom:15px;">Edit</button></center>

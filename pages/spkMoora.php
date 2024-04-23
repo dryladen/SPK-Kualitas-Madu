@@ -83,7 +83,6 @@ function MatriksNormalisasiTerbobot($koneksi)
     $matriksNormalisasiTerbobot[$i][count($matriksNormalisasi[$i])]['skala_nilai'] = array_sum($matriksBenefit) - array_sum($matriksCost);
     $matriksNormalisasiTerbobot[$i][count($matriksNormalisasi[$i])]['jenis'] = 'nilai_y';
   }
-
   return $matriksNormalisasiTerbobot;
 }
 
